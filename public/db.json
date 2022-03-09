@@ -1,0 +1,23 @@
+{
+  "cool": [
+    {
+      "id": 1,
+      "title": "Mercedes"
+    },
+    {
+      "id": 2,
+      "title": "MarcLaren"
+    },
+    {
+      "id": 3,
+      "title": "Porsh GT"
+    },
+    {
+      "id": 4,
+      "title": "Range Rover"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
