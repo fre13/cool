@@ -10,15 +10,27 @@
     },
     {
       "id": 2,
-      "title": "MarcLaren"
+      "title": "MarcLaren",
+      "altText": "Slide 1",
+      "caption": "Slide 1",
+
+      "src": "./images/marclaren.jpg"
     },
     {
       "id": 3,
-      "title": "Porsh 911"
+      "title": "Porsh 911",
+      "altText": "Slide 1",
+      "caption": "Slide 1",
+
+      "src": "./images/porsche.jpg"
     },
     {
       "id": 4,
-      "title": "Range Rover"
+      "title": "Range Rover",
+      "altText": "Slide 1",
+      "caption": "Slide 1",
+
+      "src": "./images/range.jpg"
     }
   ],
   "profile": {
