@@ -1,14 +1,19 @@
 import logo from "./logo.svg";
 import "./App.css";
-import {
-  Button,
-  UncontrolledCarousel,
-  Pagination,
-  PaginationItem,
-  PaginationLink,
-} from "reactstrap";
+import { Button } from "reactstrap";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [cool, setCool] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://my-json-server.typicode.com/fre13/cool/cool")
+      .then((res) => {
+        setCool(res.data);
+      });
+  }, [cool]);
+  console.log(cool);
   return (
     <div className="App">
       <header className="App-header">
@@ -17,53 +22,11 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <UncontrolledCarousel
-          items={[
-            {
-              altText: "Slide 1",
-              caption: "Slide 1",
-              key: 1,
-              src: "https://picsum.photos/id/123/1200/600",
-            },
-            {
-              altText: "Slide 2",
-              caption: "Slide 2",
-              key: 2,
-              src: "https://picsum.photos/id/456/1200/600",
-            },
-            {
-              altText: "Slide 3",
-              caption: "Slide 3",
-              key: 3,
-              src: "https://picsum.photos/id/678/1200/600",
-            },
-          ]}
-        />
-
-        <Pagination aria-label="Page navigation example" size="sm">
-          <PaginationItem>
-            <PaginationLink first href="#" />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" previous />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#">1</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#">2</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#">3</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" next />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" last />
-          </PaginationItem>
-        </Pagination>
-
+        <ul>
+          {cool.map((item) => {
+            return <li>{item.title}</li>;
+          })}
+        </ul>
         <a
           className="App-link"
           href="https://reactjs.org"
