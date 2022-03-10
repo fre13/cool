@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Button } from "reactstrap";
+import { Button, UncontrolledCarousel } from "reactstrap";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -12,7 +12,7 @@ function App() {
       .then((res) => {
         setCool(res.data);
       });
-  }, [cool]);
+  }, []);
   console.log(cool);
   return (
     <div className="App">
@@ -27,6 +27,9 @@ function App() {
             return <li>{item.title}</li>;
           })}
         </ul>
+
+        <UncontrolledCarousel items={cool} />
+
         <a
           className="App-link"
           href="https://reactjs.org"
